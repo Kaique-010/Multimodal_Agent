@@ -1,0 +1,24 @@
+# Core de Agentes e LLMs
+agno
+langchain
+langchain-openai
+langgraph
+
+# Para o servidor (opcional, mas recomendado)
+fastapi
+uvicorn
+
+# Para gerenciamento de configurações
+python-dotenv
+pydantic
+pydantic-settings
+
+# Para Vector Store
+langchain-community
+faiss-cpu # ou chromadb
+
+# Para Ferramentas
+beautifulsoup4
+requests
+psycopg2-binary # Se for usar Postgres
+Pillow # Para processamento de imagem

@@ -1,0 +1,62 @@
+/agente_multimodal/
+
+│
+
+├── main.py # ponto de entrada, instancia orquestrador e testes unitários 
+
+├── orchestrator.py # controla fluxos entre agentes
+
+├── memory/
+
+│ ├── vector_store.py # embeddings + busca semântica
+
+│ ├── episodic.py # memórias de curto prazo (contexto)
+
+│ └── semantic.py # memórias de longo prazo
+
+│
+
+├── agents/
+
+│ ├── __init__.py
+
+│ ├── retrieval_agent.py # busca + vetorização
+
+│ ├── synthesis_agent.py # síntese e resposta
+
+│ ├── markup_agent.py # formatações (tabelas, markdown, json)
+
+│ ├── action_agent.py # executa chamadas em tools/APIs
+
+│ └── multimodal_agent.py# imagens, áudio, texto
+
+│
+
+├── tools/
+
+│ ├── db_tool.py # consultas postgres
+
+│ ├── web_tool.py # scraping + busca web
+
+│ ├── api_tool.py # integração externa (ex: Mercado Livre)
+
+│ └── file_tool.py # leitura e escrita de arquivos
+
+│
+
+├── flows/
+
+│ ├── intent_flow.py # detecta intenção
+
+│ ├── reasoning_flow.py # LangGraph: pipeline Intenção → Ação
+
+│ └── response_flow.py # compõe resposta final
+
+│
+
+└── config/
+
+├── settings.py # chaves, URLs, configs gerais
+
+└── prompts.py # prompts padronizados por agente
+

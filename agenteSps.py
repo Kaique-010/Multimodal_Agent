@@ -11,10 +11,9 @@ from langchain_openai import ChatOpenAI
 from langchain.memory import ChatMessageHistory
 from langgraph.graph import END, StateGraph
 
-# Supondo que você tenha o arquivo com as categorias
+
 from AgenteLang.categorias_intencao import categorias_intencao
 
-# Carregar variáveis de ambiente
 load_dotenv()
 
 # Modelo de linguagem

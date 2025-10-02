@@ -22,3 +22,5 @@ beautifulsoup4
 requests
 psycopg2-binary # Se for usar Postgres
 Pillow # Para processamento de imagem
+tiktoken
+numpy

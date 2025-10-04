@@ -41,11 +41,12 @@ def rag_url_resposta(url: str, pergunta: str, k: int = DEFAULT_TOP_K) -> str:
         return f"Erro ao acessar URL: {e}"
 
     soup = BeautifulSoup(r.text, "html.parser")
-    artigo = soup.select_one("div.col-sm-9.kb-article-view-content article#kb-article")
+    '''artigo = soup.select_one("div.col-sm-9.kb-article-view-content article#kb-article")
+    
     if not artigo:
-        return "Não encontrei o artigo na página."
+        return "Não encontrei o artigo na página."'''
 
-    texto = artigo.get_text(separator="\n", strip=True)
+    texto = soup.get_text(separator="\n", strip=True)
     chunks = rag_memory.chunk_text(texto)
     rag_memory.add_texts(chunks)
 

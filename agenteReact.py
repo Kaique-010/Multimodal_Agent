@@ -6,7 +6,7 @@ from langgraph.prebuilt import create_react_agent
 from langchain_openai import ChatOpenAI
 from langgraph.checkpoint.memory import MemorySaver
 from configuracoes.config import CHAT_MODEL
-
+from tools.tool_mapa_semantico import plotar_mapa_semantico
 from tools.rag_tool import rag_url_resposta_vetorial
 from tools.inspector_tools import inspector_faiss, rag_url_resposta
 from tools.qa_tools import faiss_condicional_qa
@@ -17,7 +17,7 @@ memoria = MemorySaver()
 
 agenteReact = create_react_agent(
     llm,
-    tools=[rag_url_resposta_vetorial, rag_url_resposta, inspector_faiss, faiss_condicional_qa, salvar_dataset_finetuning],
+    tools=[rag_url_resposta_vetorial, rag_url_resposta, inspector_faiss, faiss_condicional_qa, salvar_dataset_finetuning, plotar_mapa_semantico],
     checkpointer=memoria
 )
 
